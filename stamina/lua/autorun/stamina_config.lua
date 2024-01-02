@@ -8,7 +8,7 @@ FStamina.staminaRegenRate = function(curStamina, ply)
 end
 
 
--- I'll leave this here incase u want to use it
+-- Want to make VIP's take less stamina when running? use this below!
 /* 
 FStamina.staminaDecreaseRate = function(ply)
     if ply:IsVIP() then
