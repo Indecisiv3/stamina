@@ -11,17 +11,15 @@ hook.Add("HUDPaint", "DrawStaminaBar", function()
         end
     else
         if not isStaminaFull then
-            StaminaPanel = vgui.Create("jlib.Panel")
-            StaminaPanel:SetSize(300, 40) 
-            StaminaPanel:SetPos(ScrW() / 2 - StaminaPanel:GetWide() / 2, ScrH() - StaminaPanel:GetTall() - 10) 
+            StaminaPanel = vgui.Create("DPanel")
+            StaminaPanel:SetSize(300, 40)
+            StaminaPanel:SetPos(ScrW() / 2 - StaminaPanel:GetWide() / 2, ScrH() - StaminaPanel:GetTall() - 10)
             StaminaPanel:SetBackgroundColor(Color(0, 0, 0, 200))
-            StaminaPanel:SetRounding(4)
 
-            StaminaPanel.progressBar = vgui.Create("jlib.Panel", StaminaPanel)
-            StaminaPanel.progressBar:SetSize(0, StaminaPanel:GetTall()) 
-            StaminaPanel.progressBar:SetPos(0, 0) 
+            StaminaPanel.progressBar = vgui.Create("DPanel", StaminaPanel)
+            StaminaPanel.progressBar:SetSize(0, StaminaPanel:GetTall())
+            StaminaPanel.progressBar:SetPos(0, 0)
             StaminaPanel.progressBar:SetBackgroundColor(Color(250, 255, 91, 200))
-            StaminaPanel.progressBar:SetRounding(4)
         end
     end
 
@@ -35,5 +33,3 @@ hook.Add("InitPostEntity", "RemoveStaminaPanel", function()
         StaminaPanel:Remove()
     end
 end)
-
-
